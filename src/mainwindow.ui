@@ -36,8 +36,21 @@
       <string>Sa&amp;ve to Preset</string>
      </property>
     </action>
+    <action name="actionLoadTransactions">
+     <property name="text">
+      <string>Load &amp;transactions</string>
+     </property>
+    </action>
+    <action name="actionSaveTransactions">
+     <property name="text">
+      <string>&amp;Save transactions</string>
+     </property>
+    </action>
     <addaction name="actionLoadDirsFromPreset"/>
     <addaction name="actionSaveDirsToPreset"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoadTransactions"/>
+    <addaction name="actionSaveTransactions"/>
    </widget>
    <widget class="QMenu" name="menuRun">
     <property name="title">
