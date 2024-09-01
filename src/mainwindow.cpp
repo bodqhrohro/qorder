@@ -1,11 +1,15 @@
 #include "mainwindow.h"
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
     ui.setupUi(this);
+
+    connect(ui.actionAbout, &QAction::triggered, this, [this]{ QMessageBox::about(this, tr("About"), tr("QOrder: filesystem transactions executor\n\n© Bohdan Horbeshko, 2024")); });
+    connect(ui.actionAboutQt, &QAction::triggered, this, [this]{ QMessageBox::aboutQt(this); });
 
     connect(ui.sourceDirButton, &QPushButton::clicked, this, [=]{ MainWindow::directoryDialog(SOURCE_DIR); });
     connect(ui.targetDirButton, &QPushButton::clicked, this, [=]{ MainWindow::directoryDialog(TARGET_DIR); });
