@@ -13,22 +13,72 @@
   <property name="windowTitle">
    <string>QOrder</string>
   </property>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <action name="actionLoadDirsFromPreset">
+     <property name="text">
+      <string>&amp;Load from Preset</string>
+     </property>
+    </action>
+    <action name="actionSaveDirsToPreset">
+     <property name="text">
+      <string>Sa&amp;ve to Preset</string>
+     </property>
+    </action>
+    <addaction name="actionLoadDirsFromPreset"/>
+    <addaction name="actionSaveDirsToPreset"/>
+   </widget>
+   <widget class="QMenu" name="menuRun">
+    <property name="title">
+     <string>&amp;Run</string>
+    </property>
+    <action name="actionCheckScript">
+     <property name="text">
+      <string>&amp;Check</string>
+     </property>
+    </action>
+    <action name="actionExecuteScript">
+     <property name="text">
+      <string>&amp;Execute</string>
+     </property>
+    </action>
+    <addaction name="actionCheckScript"/>
+    <addaction name="actionExecuteScript"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <action name="actionAboutQt">
+     <property name="text">
+      <string>About &amp;Qt</string>
+     </property>
+    </action>
+    <action name="actionAbout">
+     <property name="text">
+      <string>&amp;About</string>
+     </property>
+    </action>
+    <addaction name="actionAboutQt"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuRun"/>
+   <addaction name="menuHelp"/>
+  </widget>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="dirsLayout">
-    <item row="0" column="0">
-     <widget class="QPushButton" name="loadDirsFromPresetButton">
-      <property name="text">
-       <string>Load from Preset</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="saveDirsToPresetButton">
-      <property name="text">
-       <string>Save to Preset</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QLabel" name="sourceDirLabel">
       <property name="text">
@@ -37,7 +87,18 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QLineEdit" name="sourceDir"/>
+     <layout class="QHBoxLayout">
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="sourceDir"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="sourceDirButton">
+        <property name="text">
+         <string>…</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="1" column="1">
      <widget class="QLabel" name="targetDirLabel">
@@ -47,7 +108,18 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLineEdit" name="targetDir"/>
+     <layout class="QHBoxLayout">
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="targetDir"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="targetDirButton">
+        <property name="text">
+         <string>…</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="3" column="0" colspan="2">
      <widget class="QLabel" name="actionsTitle">
