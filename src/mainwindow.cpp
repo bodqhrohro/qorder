@@ -14,17 +14,20 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::directoryDialog(dirType type)
 {
     QLineEdit* dirEdit;
+    QString title;
     switch (type) {
         case SOURCE_DIR:
             dirEdit = ui.sourceDir;
+            title = tr("Choose the source directory");
         break;
         case TARGET_DIR:
             dirEdit = ui.targetDir;
+            title = tr("Choose the target directory");
         break;
     }
 
     QString newPath = QFileDialog::getExistingDirectory(this,
-                                                        tr("Choose the target directory"),
+                                                        title,
                                                         dirEdit->text(),
                                                         QFileDialog::ShowDirsOnly);
     if (newPath != "") {
