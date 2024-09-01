@@ -6,6 +6,11 @@
 
 #include "ui_mainwindow.h"
 
+enum dirType {
+    SOURCE_DIR,
+    TARGET_DIR,
+};
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -15,6 +20,8 @@ class MainWindow : public QMainWindow
 
     private:
         Ui::MainWindow ui;
+
+        void directoryDialog(dirType);
 };
 
 #endif // MAINWINDOW_H
