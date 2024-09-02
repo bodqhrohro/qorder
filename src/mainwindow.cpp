@@ -8,6 +8,12 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui.setupUi(this);
 
+    actionsModel = new ActionsModel(this);
+    ui.actionsTable->setModel(actionsModel);
+
+    ui.actionNewMoveAction->setShortcut(Qt::CTRL | Qt::Key_M);
+
+    connect(ui.actionNewMoveAction, &QAction::triggered, this, &MainWindow::newMoveAction);
     connect(ui.actionAbout, &QAction::triggered, this, [this]{ QMessageBox::about(this, tr("About"), tr("QOrder: filesystem transactions executor\n\n© Bohdan Horbeshko, 2024")); });
     connect(ui.actionAboutQt, &QAction::triggered, this, [this]{ QMessageBox::aboutQt(this); });
 
@@ -37,4 +43,10 @@ void MainWindow::directoryDialog(dirType type)
     if (newPath != "") {
         dirEdit->setText(newPath);
     }
+}
+
+void MainWindow::newMoveAction()
+{
+    actionsModel->addAction(QString(""), QString(""));
+    ui.actionsTable->repaint();
 }

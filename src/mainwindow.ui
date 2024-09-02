@@ -69,6 +69,17 @@
     <addaction name="actionCheckScript"/>
     <addaction name="actionExecuteScript"/>
    </widget>
+   <widget class="QMenu" name="menuActions">
+    <property name="title">
+     <string>&amp;Actions</string>
+    </property>
+    <action name="actionNewMoveAction">
+     <property name="text">
+      <string>&amp;New move</string>
+     </property>
+    </action>
+    <addaction name="actionNewMoveAction"/>
+   </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>&amp;Help</string>
@@ -88,6 +99,7 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRun"/>
+   <addaction name="menuActions"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QWidget" name="centralWidget">

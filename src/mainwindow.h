@@ -5,6 +5,7 @@
 #include <QtWidgets/QMainWindow>
 
 #include "ui_mainwindow.h"
+#include "actions_model.h"
 
 enum dirType {
     SOURCE_DIR,
@@ -20,8 +21,10 @@ class MainWindow : public QMainWindow
 
     private:
         Ui::MainWindow ui;
+        ActionsModel *actionsModel;
 
         void directoryDialog(dirType);
+        void newMoveAction();
 };
 
 #endif // MAINWINDOW_H
