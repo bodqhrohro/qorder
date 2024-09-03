@@ -12,8 +12,9 @@ qtprocessed = qt6.preprocess(moc_headers: ['src/mainwindow.h', 'src/actions_mode
                              ui_files: 'src/mainwindow.ui',
                              include_directories: includes)
 
-exe = executable('qorder', 'src/main.cpp', 'src/mainwindow.cpp', 'src/actions_model.cpp',
+exe = executable('qorder', 'src/main.cpp', 'src/mainwindow.cpp', 'src/actions_model.cpp', 'src/presetfile.cpp',
                  qtprocessed,
+                 cpp_args: '-Wno-psabi',
                  include_directories: includes,
                  dependencies: qt6_deps,
                  install: true)

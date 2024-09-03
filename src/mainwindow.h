@@ -23,8 +23,12 @@ class MainWindow : public QMainWindow
         Ui::MainWindow ui;
         ActionsModel *actionsModel;
 
+        void handle_exception(const QString& title, std::exception_ptr eptr);
+        void error(const QString& title, const QString& text);
         void directoryDialog(dirType);
         void newMoveAction();
+        void loadDirsFromPreset();
+        void saveDirsToPreset();
 };
 
 #endif // MAINWINDOW_H
